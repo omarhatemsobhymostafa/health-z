@@ -91,7 +91,7 @@ function HabitTracker() {
       </div>
       <div className="flex  flex-wrap mb-10">
         {habitState.map((status, index) => (
-          <div key={index} className=" border p-4 rounded shadow text-center ${lessonReadState[index] ? 'opacity-50 text-gray-500' : ''} w-[calc(100%/7)]  p-4 rounded  border-[1px] bg-[#d0cde1] min-h-full min-h-full text-center hover:shadow-md hover:translate-y-[-1px] shadow-lg shadow-[#87fff980]">
+          <div key={index} className="border p-4 rounded shadow text-center ${lessonReadState[index] ? 'opacity-50 text-gray-500' : ''}  p-4 rounded  border-[1px] lg:w-[calc(100%/7)] md:w-full bg-[#d0cde1]  text-center hover:shadow-md hover:translate-y-[-1px] shadow-lg shadow-[#87fff980]">
             <h2 className="font-semibold">اليوم {index + 1}</h2>
             {status === true && <p className="text-green-600 font-bold"> تم</p>}
             {status === false && <p className="text-red-600 font-bold"> لم يتم</p>}
@@ -123,7 +123,7 @@ function HabitTracker() {
         {lessons.map((lesson, index) => (
           <div
             key={index}
-            className={`border p-4 rounded shadow text-center ${lessonReadState[index] ? 'opacity-50 text-gray-500' : ''}  p-4 rounded  border-[1px] w-[calc(100%/7)] bg-[#d0cde1] min-h-full min-h-full text-center hover:shadow-md hover:translate-y-[-1px] shadow-lg shadow-[#87fff980]`}
+            className={`border p-4 rounded shadow text-center ${lessonReadState[index] ? 'opacity-50 text-gray-500' : ''}  p-4 rounded  border-[1px] lg:w-[calc(100%/7)] md:w-full bg-[#d0cde1]  text-center hover:shadow-md hover:translate-y-[-1px] shadow-lg shadow-[#87fff980]`}
           >
             <h2 className="font-semibold">اليوم {index + 1}</h2>
 
