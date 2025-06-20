@@ -28,7 +28,7 @@ function HabitTracker() {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    const startDate = new Date("2025-06-21");
+    const startDate = new Date("2025-06-20");
     const today = new Date();
     const diffTime = today.getTime() - startDate.getTime();
     const dayDiff = Math.floor(diffTime / (1000 * 60 * 60 * 24)) % 14;

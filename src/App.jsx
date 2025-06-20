@@ -13,10 +13,10 @@ const router = createBrowserRouter([
     path: '/',
     element: <Layout />,
     children: [
-      { path: '/', element: <HabitTracker /> },
+      { path: '/', element: <HabitTracker />  },
       { path: '/login', element: <Login /> },
       { path: '/signup', element: <Signup /> },
-      { path: '/lesson/:day', element: <LessonPage /> }, // ✨ دي الإضافة الجديدة
+      { path: '/lesson/:day', element: <LessonPage /> },
     ],
   },
 ]);
