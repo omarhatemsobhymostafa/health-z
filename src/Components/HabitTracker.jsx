@@ -87,7 +87,7 @@ function HabitTracker() {
       <h2 className="mb-20 font-bold text-3xl  ">مرحباً، {currentUser.username} , ازاي الصحة ؟</h2>
 
       <div className='w-full flex justify-center'>
-        <div className='bg-[#fec5bb] rounded-3xl h-52 w-52 text-center px-5 py-5 mb-5 content-center z-0'><h2 className="text-xl font-semibold text-center mb-5 "> هل تناولتي الكربوهيدرات الكاملة الكاملة علي طبيعتها ؟</h2></div>
+        <div className='bg-[#fec5bb] rounded-3xl h-52 w-52 text-center px-5 py-5 mb-5 content-center z-0'><h2 className="text-xl font-semibold text-center mb-5 "> هل تناولتي الكربوهيدرات  الكاملة علي طبيعتها ؟</h2></div>
       </div>
       <div className="flex  flex-wrap mb-10">
         {habitState.map((status, index) => (
