@@ -2,6 +2,7 @@
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Header from './Header'
+import Footer from './Footer';
 function Layout() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -22,6 +23,7 @@ function Layout() {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 }

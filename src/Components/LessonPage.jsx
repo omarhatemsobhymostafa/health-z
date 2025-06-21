@@ -13,7 +13,7 @@ export default function LessonPage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto py-32 px-4">
+    <div className="max-w-3xl mx-auto py-56 px-4">
       <Link to="/" className="text-blue-600 hover:underline">⬅️ رجوع</Link>
       <h2 className="text-2xl font-bold mb-4">درس اليوم {day}</h2>
       <p className="text-md leading-loose whitespace-pre-line">{lesson}</p>

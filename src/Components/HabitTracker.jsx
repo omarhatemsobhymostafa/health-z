@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaHandHoldingHeart } from "react-icons/fa6";
+
 const lessons = [
   `تختار كربوهيدرات أحسن" يعني إنك تركز على إنك تاكل كربوهيدرات جودتها أحسن...`,
   `تختار كربوهيدرات أحسن" يعني إنك تركز على إنك تاكل كربوهيدرات جودتها أحسن...`,
@@ -78,20 +80,33 @@ function HabitTracker() {
     setError('');
   };
 
-  if (!currentUser) {
-    return <p className="text-center mt-10"> يجب تسجيل الدخول لعرض التقدم</p>;
-  }
+if (!currentUser) {
+  return (
+    <div className="text-center h-[100vh] py-32">
+      <p className="text-xl mb-4 text-[#bb3e03] font-semibold"> سجل الان  </p>
+      <Link to="/login">
+        <button className="bg-[#0a5d89] text-white px-6 py-2 rounded text-lg hover:bg-[#083b5c] transition">
+          تسجيل الدخول
+        </button>
+      </Link>
+      <p className="mt-3">
+        أو <Link to="/signup" className="underline text-green-600 hover:text-green-800">سجّل حساب جديد</Link>
+      </p>
+    </div>
+  );
+}
+
 
   return (
-    <div className="p-4 max-w-6xl mx-auto py-32">
-      <h2 className="mb-20 font-bold text-3xl  ">مرحباً، {currentUser.username} , ازاي الصحة ؟</h2>
+    <div className="p-4 max-w-6xl mx-auto py-60">
+      <h2 className="mb-20 font-bold text-3xl   ">مرحباً، {currentUser.username} , <span className=' '>ازاي الصحة ؟  </span></h2>
 
       <div className='w-full flex justify-center'>
         <div className='bg-[#fec5bb] rounded-3xl h-52 w-52 text-center px-5 py-5 mb-5 content-center z-0'><h2 className="text-xl font-semibold text-center mb-5 "> هل تناولتي الكربوهيدرات  الكاملة علي طبيعتها ؟</h2></div>
       </div>
-      <div className="flex  flex-wrap mb-10">
+      <div className="flex   flex-wrap mb-10">
         {habitState.map((status, index) => (
-          <div key={index} className="border p-4 rounded shadow text-center ${lessonReadState[index] ? 'opacity-50 text-gray-500' : ''}  p-4 rounded  border-[1px] lg:w-[calc(100%/7)] md:w-full bg-[#d0cde1]  text-center hover:shadow-md hover:translate-y-[-1px] shadow-lg shadow-[#87fff980]">
+          <div key={index} className="w-full  lg:w-1/6 border p-4 rounded shadow text-center ${lessonReadState[index] ? 'opacity-50 text-gray-500' : ''}  p-4 rounded  border-[1px]  bg-[#d0cde1]  text-center hover:shadow-md hover:translate-y-[-1px] shadow-lg shadow-[#87fff980]">
             <h2 className="font-semibold">اليوم {index + 1}</h2>
             {status === true && <p className="text-green-600 font-bold"> تم</p>}
             {status === false && <p className="text-red-600 font-bold"> لم يتم</p>}
@@ -123,7 +138,7 @@ function HabitTracker() {
         {lessons.map((lesson, index) => (
           <div
             key={index}
-            className={`border p-4 rounded shadow text-center ${lessonReadState[index] ? 'opacity-50 text-gray-500' : ''}  p-4 rounded  border-[1px] lg:w-[calc(100%/7)] md:w-full bg-[#d0cde1]  text-center hover:shadow-md hover:translate-y-[-1px] shadow-lg shadow-[#87fff980]`}
+            className={`w-full  lg:w-1/6 border p-4 rounded shadow text-center ${lessonReadState[index] ? 'opacity-50 text-gray-500' : ''}  p-4 rounded  border-[1px]  bg-[#d0cde1]  text-center hover:shadow-md hover:translate-y-[-1px] shadow-lg shadow-[#87fff980]`}
           >
             <h2 className="font-semibold">اليوم {index + 1}</h2>
 
@@ -155,7 +170,7 @@ function HabitTracker() {
 
       {error && <p className="text-center text-red-500 mt-4">{error}</p>}
 
-      <div className="mt-6 text-center">
+      <div className="mt-6 text-center bg-[#ffddd2] py-3 ">
         <p>العادات المنجزة: {habitState.filter((v) => v === true).length} من 14</p>
         <p>الدروس المقروءة: {lessonReadState.filter((v) => v === true).length} من 14</p>
       </div>
