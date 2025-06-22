@@ -15,3 +15,29 @@
     font-variation-settings:
     "slnt" 0;
 }
+
+.habit-name{
+    animation-name: habit-move;
+    animation-duration: 1.5s; 
+    animation-iteration-count:infinite;
+
+    position: relative;
+    animation-direction: alternate;
+   
+    
+}
+@keyframes habit-move {
+    0%{
+        border-radius:1.3rem ;
+    }
+    50% {
+            border-radius: 50%;
+
+
+  }
+      100% {
+            border-radius: 50%;
+
+
+  }
+}

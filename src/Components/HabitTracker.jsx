@@ -104,8 +104,8 @@ if (!currentUser) {
     <div className="p-4 max-w-6xl mx-auto py-60">
       <h2 className="mb-20 font-bold text-3xl   ">مرحباً، {currentUser.username} , <span className=' '>ازاي الصحة ؟  </span></h2>
 
-      <div className='w-full flex justify-center'>
-        <div className='bg-[#fec5bb] rounded-3xl h-52 w-52 text-center px-5 py-5 mb-5 content-center z-0'><h2 className="text-xl font-semibold text-center mb-5 "> هل تناولتي الكربوهيدرات  الكاملة علي طبيعتها ؟</h2></div>
+      <div className='w-full flex justify-center ' >
+        <div className='bg-[#fec5bb] rounded-3xl habit-name  h-52 w-52 text-center px-5 py-5 mb-5 content-center z-0'><h2 className="text-xl font-semibold text-center mb-5 "> هل تناولتي الكربوهيدرات  الكاملة علي طبيعتها ؟</h2></div>
       </div>
       <div className="flex   flex-wrap mb-10">
         {habitState.map((status, index) => (
@@ -130,7 +130,7 @@ if (!currentUser) {
               </div>
             )}
             {status === null && index !== currentDay && (
-              <p className="text-gray-400 mt-2">غير متاح</p>
+              <p className="text-gray-400 mt-2">  غير متاح</p>
             )}
           </div>
         ))}
