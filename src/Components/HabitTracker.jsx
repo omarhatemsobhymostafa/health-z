@@ -35,6 +35,9 @@ function HabitTracker() {
     const diffTime = today.getTime() - startDate.getTime();
     const dayDiff = Math.floor(diffTime / (1000 * 60 * 60 * 24)) % 14;
     setCurrentDay(dayDiff);
+   
+
+
   }, []);
 
   useEffect(() => {
@@ -132,6 +135,7 @@ if (!currentUser) {
           </div>
         ))}
       </div>
+      
 
       <h2 className="text-xl font-semibold text-center mb-2">الدروس</h2>
       <div className="flex  flex-wrap">

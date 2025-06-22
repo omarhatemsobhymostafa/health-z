@@ -22,7 +22,7 @@ function Login() {
     if (matchedUser) {
       setError('');
       localStorage.setItem("loggedInUser", JSON.stringify(matchedUser));
-      navigate('/');
+      navigate('/dashboard');
     } else {
       setError(' اسم المستخدم أو الباسورد غير صحيح');
     }
