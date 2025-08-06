@@ -28,6 +28,8 @@ function Signup() {
 
     const newUser = { username, password };
     const updatedUsers = [...users, newUser];
+    console.log(updatedUsers.length);
+    
     localStorage.setItem('userInfo', JSON.stringify(updatedUsers));
     localStorage.setItem('loggedInUser', JSON.stringify(newUser));
 

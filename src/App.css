@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
-*{
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: 0;
@@ -13,31 +14,31 @@
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings:
-    "slnt" 0;
+        "slnt" 0;
 }
 
-.habit-name{
+.habit {
     animation-name: habit-move;
-    animation-duration: 1.5s; 
-    animation-iteration-count:infinite;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
 
     position: relative;
     animation-direction: alternate;
-   
-    
+        background-position:bottom;
+
+
 }
+
 @keyframes habit-move {
-    0%{
-        border-radius:1.3rem ;
+    0% {
+        background-size: 110%;
+    
+
+       
     }
-    50% {
-            border-radius: 50%;
+    100%{
+               background-size: 140%;
 
-
-  }
-      100% {
-            border-radius: 50%;
-
-
-  }
+     
+    }
 }

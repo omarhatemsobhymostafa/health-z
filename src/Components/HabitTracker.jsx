@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHandHoldingHeart } from "react-icons/fa6";
+import nashawat from './../images/nashawayat.jpg'
 
 const lessons = [
   `تختار كربوهيدرات أحسن" يعني إنك تركز على إنك تاكل كربوهيدرات جودتها أحسن...`,
@@ -28,7 +29,8 @@ function HabitTracker() {
   const [currentDay, setCurrentDay] = useState(0);
   const [error, setError] = useState('');
   const [currentUser, setCurrentUser] = useState(null);
-
+ 
+  
   useEffect(() => {
     const startDate = new Date("2025-06-20");
     const today = new Date();
@@ -105,11 +107,14 @@ if (!currentUser) {
       <h2 className="mb-20 font-bold text-3xl   ">مرحباً، {currentUser.username} , <span className=' '>ازاي الصحة ؟  </span></h2>
 
       <div className='w-full flex justify-center ' >
-        <div className='bg-[#fec5bb] rounded-3xl habit-name  h-52 w-52 text-center px-5 py-5 mb-5 content-center z-0'><h2 className="text-xl font-semibold text-center mb-5 "> هل تناولتي الكربوهيدرات  الكاملة علي طبيعتها ؟</h2></div>
+        <div className='bg-[#fec5bb]  rounded-3xl habit-name   h-52 w-52 text-center mb-5 content-center z-0 habit  '  style={{backgroundImage: `url(${nashawat})` , backgroundPosition: `center`, }} ><h2  style={{backdropFilter:`blur(3px)`,}} className="h-52 px-1 text-xl items-center content-center font-semibold text-center mb-5 backdrop-blur-xs px-34"> هل تناولتي الكربوهيدرات  الكاملة علي طبيعتها ؟</h2>
+       
+        </div>
+        
       </div>
       <div className="flex   flex-wrap mb-10">
         {habitState.map((status, index) => (
-          <div key={index} className="w-1/2  lg:w-1/6 border p-4 rounded shadow text-center ${lessonReadState[index] ? 'opacity-50 text-gray-500' : ''}  p-4 rounded  border-[1px]  bg-[#d0cde1]  text-center hover:shadow-md hover:translate-y-[-1px] shadow-lg shadow-[#87fff980]">
+          <div key={index} className="w-1/2  lg:w-1/6 border p-4 rounded shadow text-center ${lessonReadState[index] ? 'opacity-50 text-gray-500' : ''}  p-4 rounded  border-[1px]  bg-[#8ECAE6]  text-center hover:translate-y-[-1px]">
             <h2 className="font-semibold">اليوم {index + 1}</h2>
             {status === true && <p className="text-green-600 font-bold"> تم</p>}
             {status === false && <p className="text-red-600 font-bold"> لم يتم</p>}
@@ -142,13 +147,13 @@ if (!currentUser) {
         {lessons.map((lesson, index) => (
           <div
             key={index}
-            className={`w-1/2  lg:w-1/6 border p-4 rounded shadow text-center ${lessonReadState[index] ? 'opacity-50 text-gray-500' : ''}  p-4 rounded  border-[1px]  bg-[#d0cde1]  text-center hover:shadow-md hover:translate-y-[-1px] shadow-lg shadow-[#87fff980]`}
+            className={`w-1/2  lg:w-1/6 border p-4 rounded shadow text-center ${lessonReadState[index] ? 'opacity-50 text-gray-500' : ''}  p-4 rounded  border-[1px]  bg-[#8ECAE6]  text-center  hover:translate-y-[-1px]  `}
           >
             <h2 className="font-semibold">اليوم {index + 1}</h2>
 
             <Link
               to={`/lesson/${index + 1}`}
-              className="text-blue-700 underline hover:text-blue-900"
+              className="text-blue-700  hover:text-blue-900"
              onClick={() => window.scrollTo({ top: 0 })}
 
             >
@@ -156,7 +161,7 @@ if (!currentUser) {
             </Link>
           
           <br />
-            {lessonReadState[index] === true && <p className="text-green-600 font-bold">✔️ تم قراءته</p>}
+            {lessonReadState[index] === true && <p className="text-green-600 font-bold"> تم قراءته</p>}
             {lessonReadState[index] === null && index === currentDay && (
               <button
                 onClick={() => handleLessonSubmit(index, true)}
@@ -174,7 +179,7 @@ if (!currentUser) {
 
       {error && <p className="text-center text-red-500 mt-4">{error}</p>}
 
-      <div className="mt-6 text-center bg-[#ffddd2] py-3 ">
+      <div className="mt-6 text-center bg-[#ffddd2] py-3 rounded ">
         <p>العادات المنجزة: {habitState.filter((v) => v === true).length} من 14</p>
         <p>الدروس المقروءة: {lessonReadState.filter((v) => v === true).length} من 14</p>
       </div>
