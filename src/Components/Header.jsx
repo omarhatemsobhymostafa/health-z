@@ -9,7 +9,7 @@ export default function Header() {
 
       <div className="flex gap-3 md:gap-5 flex-row md:flex-row items-center">
         <Link to='/login'>
-          <button className='text-[#110533] font-bold'>تسجيل دخول</button>
+          <button className='text-[white]'>تسجيل دخول</button>
         </Link>
         <Link to='/signup'>
           <button className='bg-[#110533]  text-white w-28 h-9 rounded-md transition'>إنشاء حساب</button>

@@ -5,7 +5,7 @@ import dancingtori from "./../images/tori/dancing-tori.gif"
 export default function Landing() {
   return (
     <>
-      <div className='h-[100vh] w-full  flex flex-col  items-center text-white ' style={{ backgroundImage: `url(${herosection})`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`, backgroundSize: `cover`, }}>
+      <div className='h-[100vh] w-full  flex flex-col  items-center text-[black] font-extrabold  ' style={{ backgroundImage: `url(${herosection})`, backgroundPosition: `center`, backgroundRepeat: `no-repeat`, backgroundSize: `cover`, }}>
         <div className='text-center h-[100vh] w-full bg-[#00000000] items-center content-center'>
           <div className='h-[55vh]  content-center'>
             <div className='flex justify-center h-1/2'>
